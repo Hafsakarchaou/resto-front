@@ -23,7 +23,7 @@ const AddCityComponent = () => {
 
         if (id) {
             VilleService.updateVille(id, ville).then((response) => {
-                navigate('/ville')
+                navigate('/admin/ville')
             }).catch(error => {
                 console.log(error)
             })
@@ -31,7 +31,7 @@ const AddCityComponent = () => {
         } else {
             VilleService.createVille(ville).then((response) => {
                 console.log(response.data)
-                navigate('/ville')
+                navigate('/admin/ville')
             }).catch(error => {
                 console.log(error)
             })
@@ -76,7 +76,7 @@ const AddCityComponent = () => {
                             <button className = "btn btn-success formbtn" onClick = {(e) => saveOrUpdateVille(e)}  id="submit" type="submit">
                                 {id ? 'Update City' : 'Add City'}
                                 </button>
-                            <Link to="/ville" className="btn btn-danger"> Cancel </Link>
+                            <Link to="/admin/ville" className="btn btn-danger"> Cancel </Link>
                         </div>
                     </form>
                 </div>

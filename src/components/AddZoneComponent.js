@@ -13,16 +13,18 @@ const AddZoneComponent = () => {
 
     useEffect(() => {
         // Fetch all available cities and set the options for the dropdown
-        VilleService.getAllVilles().then((response) => {
-            const options = response.data.map((ville) => ({
-                value: ville.id,
-                label: ville.nom,
-            }));
-            setVilleOptions(options);
-        }).catch(error => {
-            console.log(error);
-        });
+            // Fetch all available cities and set the options for the dropdown
+    VilleService.getAllVilles().then((response) => {
+        const options = response.data.map((ville) => ({
+            id: ville.id,
+            nom: ville.nom,
+        }));
+        setVilleOptions(options);
+        console.log(options); 
 
+    }).catch(error => {
+        console.log(error);
+    });
         if (id) {
             // If an ID is provided, fetch the zone details and set the state variables accordingly
             ZoneService.getZoneById(id).then((response) => {
@@ -34,26 +36,27 @@ const AddZoneComponent = () => {
         }
     }, [id]);
 
+
     const handleVilleSelect = (selectedValue) => {
-        const ville = villeOptions.find((ville) => ville.value === selectedValue);
-        setSelectedVille(ville);
+        console.log(selectedValue);
+        setSelectedVille(selectedValue);
     };
-
-
     const saveOrUpdateZone = (e) => {
         e.preventDefault();
         console.log(selectedVille);
-        const zone = { nom, ville: { id: selectedVille } };
+    const zone = { nom, ville: selectedVille  };
+    
 
         if (id) {
             ZoneService.updateZone(id, zone).then(() => {
-                navigate('/zones');
+                navigate('/admin/zones');
             }).catch(error => {
                 console.log(error);
             });
         } else {
+            console.log(zone)
             ZoneService.createZone(zone).then(() => {
-                navigate('/zones');
+                navigate('/admin/zones');
             }).catch(error => {
                 console.log(error);
             });
@@ -90,17 +93,26 @@ const AddZoneComponent = () => {
                                         value={villeId}
                                         onChange={(e) => setVilleId(e.target.value)}
                                     />*/}
-                                    {/**************************************************** */}
+                                    {/**************************************************** *
                                     <DropdownButton className="dropdwn" title={selectedVille ? selectedVille.label : 'Select Ville'}>
                                         {villeOptions.map((ville) => (
-                                            <Dropdown.Item key={ville.value} eventKey={ville.value} onSelect={handleVilleSelect}>
+                                            <Dropdown.Item key={ville.nom} eventKey={ville.nom} onSelect={handleVilleSelect}>
                                                 {ville.label}
                                             </Dropdown.Item>
                                         ))}
-                                    </DropdownButton>
-                                    
+                                        </DropdownButton> */}
+                                    <Dropdown>
+                                        <Dropdown.Toggle>{selectedVille ? selectedVille.nom : 'Select Ville'}</Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                            {villeOptions.map((ville) => (
+                                                <Dropdown.Item key={ville.id} onClick={() => handleVilleSelect(ville)}>
+                                                    {ville.nom}
+                                                </Dropdown.Item>
+                                            ))}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
 
-                                    {console.log("hereeee")}
+
                                     <div className="valid-feedback">Ville id is valid!</div>
                                     <div className="invalid-feedback">Ville id cannot be blank!</div>
                                 </div>
@@ -108,7 +120,7 @@ const AddZoneComponent = () => {
                                     <button className="btn btn-success formbtn" onClick={(e) => saveOrUpdateZone(e)} id="submit" type="submit">
                                         {id ? 'Update Zone' : 'Add Zone'}
                                     </button>
-                                    <Link to="/zones" className="btn btn-danger">
+                                    <Link to="/admin/zones" className="btn btn-danger">
                                         Cancel
                                     </Link>
                                 </div>

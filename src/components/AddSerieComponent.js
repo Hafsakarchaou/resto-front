@@ -22,7 +22,7 @@ const AddSerieComponent = () => {
 
         if (id) {
             SerieService.updateSerie(id, serie).then((response) => {
-                navigate('/series')
+                navigate('/admin/series')
             }).catch(error => {
                 console.log(error)
             })
@@ -30,7 +30,7 @@ const AddSerieComponent = () => {
         } else {
             SerieService.createSeries(serie).then((response) => {
                 console.log(response.data)
-                navigate('/series')
+                navigate('/admin/series')
             }).catch(error => {
                 console.log(error)
             })
@@ -72,7 +72,7 @@ const AddSerieComponent = () => {
                                     <button className="btn btn-success formbtn" onClick={(e) => saveOrUpdateSerie(e)} id="submit" type="submit">
                                         {id ? 'Update Serie' : 'Add Serie'}
                                     </button>
-                                    <Link to="/series" className="btn btn-danger"> Cancel </Link>
+                                    <Link to="/admin/series" className="btn btn-danger">Cancel</Link>
                                 </div>
                             </form>
                         </div>

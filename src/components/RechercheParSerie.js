@@ -109,18 +109,18 @@ console.log("selectedSerie:", selectedSerie);
     
         
     <div className="container-xxl position-relative p-0">
-        <div className="container-xxl py-5 bg-dark hero-header mb-5">
+        <div className="container-xxl py-5 bg-dark hero-header">
           <div className="container my-5 py-5">
             <Row>
               <div className="col-sm-8">
-                <h2  class="display-3 animated slideInLeft text-lg-start title ">Chercher <br/> Des Restaurants <br/> Par Series</h2>
+                <h2  class="display-3 animated slideInLeft text-lg-start tit1 ">Chercher <br/> Des Restaurants <br/> Par Series</h2>
               </div>
               <div className="col-sm-4">
               <Link to={{
                   pathname: "/results",
                   search: `?v=${selectedVille}&z=${selectedZone}&se=${selectedSerie}`
                   
-                      }} className="btn btn-secondary mb-2 but3"> Chercher </Link>
+                      }} className="btn btn-secondary mb-2 but3"> <strong>Chercher</strong> </Link>
               </div>
             </Row>
         </div>

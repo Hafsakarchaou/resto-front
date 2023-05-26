@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios";
-const RESTAURANT_BASE_REST_API_URL = 'http://localhost:8084/restaurants';
+const RESTAURANT_BASE_REST_API_URL = 'http://localhost:8081/restaurants';
 class RestoService {
     getAllRestaurants(){
         return axios.get(RESTAURANT_BASE_REST_API_URL+"/all")

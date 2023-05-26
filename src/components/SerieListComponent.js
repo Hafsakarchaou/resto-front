@@ -38,7 +38,7 @@ const SerieListComponent = () => {
                                 <h2><b>Series</b></h2>
                             </div>
                             <div class="col-sm-7">
-                                <Link to="/series/add-serie" className="btn btn-primary mb-2"> <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Serie</span></a></Link>
+                                <Link to="/admin/series/add-serie" className="btn btn-primary mb-2"> <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Serie</span></a></Link>
                             </div>
                         </div>
                     </div>

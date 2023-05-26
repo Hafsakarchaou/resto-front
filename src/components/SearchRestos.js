@@ -14,14 +14,25 @@ const SearchRestos = () => {
             <div className="row g-5">
               <div className="col-lg-6 text-center">
                 <h1 className="display-3 animated slideInLeft text-lg-start tit1">Chercher<br />Des restaurants</h1>
-                <p className="text-brown animated slideInLeft mb-4 pb-2 text-lg-start">Trouver des restaurants en fonction de la spécialité culinaire ou de la série de votre choix. Rechercher facilement des restaurants dans votre région ou dans une autre ville que vous souhaitez visiter</p>
-                <Link to="/RechercheParSpecialite"> <a href="#" class="btn btn-secondary btn9">Recherche par specialite</a></Link>
+                <p className="text-brown animated slideInLeft mb-4 pb-2 text-lg-start">
+                  <strong>
+                <span style={{ background: '#e5e1de76', padding: '0px' }}>
+
+                      Trouver des restaurants en fonction de la spécialité culinaire ou de la série de votre choix. Rechercher facilement des restaurants dans votre région ou dans une autre ville que vous souhaitez visiter
+                    </span>
+                    </strong>
+                </p>
+                
+                <Link to="/RechercheParSpecialite"> <a href="#" class="btn btn-secondary btn9"><strong>Recherche par specialite</strong></a></Link>
                 
               </div>
               <div className="col-lg-6 text-center  overflow-hidden">
               <h1 className="display-3 text-white animated text-lg-start"><br /><br /><br /></h1>
                 <p className="text-white animated mb-4 pb-2 text-lg-start"></p>
-              <Link to="/RechercheParSerie"> <a href="#" class="btn btn-secondary btn9">Recherche par serie</a></Link>
+              <Link to="/RechercheParSerie"> <a href="#" class="btn btn-secondary btn9">
+                <strong>
+                Recherche par serie</strong>
+                </a></Link>
               
               </div>
             </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const VILLE_BASE_REST_API_URL = 'http://localhost:8084/villes';
+const VILLE_BASE_REST_API_URL = 'http://localhost:8081/villes';
 
 class VilleService{
     getAllVilles(){

@@ -28,8 +28,8 @@ const SearchComponent = (props) => {
   return (
     <div>
       <Dropdown className='drop'>
-        <Dropdown.Toggle variant="secondary" id="dropdown-basic" onClick={handleShow}>
-          {selectedOption || props.buttonTitle}
+        <Dropdown.Toggle variant="secondary" id="dropdown-basic" onClick={handleShow}className='drop1'>
+        <strong>{selectedOption || props.buttonTitle}</strong>
         </Dropdown.Toggle>
       </Dropdown>
       <Modal show={show} onHide={handleClose}>

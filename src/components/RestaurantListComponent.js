@@ -38,7 +38,7 @@ const RestaurantListComponent = () => {
                                 <h2><b>Restaurants</b></h2>
                             </div>
                             <div class="col-sm-7">
-                                <Link to="/restaurants/add-restaurant" className="btn btn-primary mb-2"> <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Restaurant</span></a></Link>
+                                <Link to="add-restaurant" className="btn btn-primary mb-2"> <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Restaurant</span></a></Link>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ const RestaurantListComponent = () => {
                                             <td>
                                                 
                                                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons" onClick={() => deleteRestaurant(restaurant.id)}>&#xE5C9;</i></a>
-                                                <Link to={`/edit-restaurant/${restaurant.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
+                                                <Link to={`/admin/edit-restaurant/${restaurant.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
 
                                                
                                                 

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import SpecialiteService from '../services/SpecialiteService'
 import { Link } from 'react-router-dom'
+import HeaderComponent from "./HeaderComponent"; 
 
 const ListSpecialiteComponent = () => {
     const [specialite, setSpecialite] = useState([])

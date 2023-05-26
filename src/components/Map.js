@@ -1,32 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { GoogleMap, useLoadScript,MarkerF } from "@react-google-maps/api";
+import { Paper, Typography, useMediaQuery } from '@material-ui/core';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import { Rating } from '@material-ui/lab';
 
-class Map extends Component {
-  componentDidMount() {
-    const mapOptions = {
-      zoom: 12,
-      center: { lat: 37.7749, lng: -122.4194 }, // San Francisco
-    };
-    this.map = new window.google.maps.Map(this.refs.map, mapOptions);
+const Map = ({ restaurants }) => {
+  const matches = useMediaQuery('(min-width:600px)');
 
-    // Create a marker for each restaurant
-    this.props.restaurants.forEach((restaurant) => {
-      const marker = new window.google.maps.Marker({
-        position: { lat: restaurant.latitude, lng: restaurant.longitude },
-        map: this.map,
-        title: restaurant.name,
-      });
+  // Calculate the average latitude and longitude for centering the map
+  const totalRestaurants = restaurants.length;
+  const [markerPositions, setMarerPositions]=useState(restaurants);
+  const centerLat = restaurants.reduce((sum, restaurant) => sum + restaurant.latitude, 0) / totalRestaurants;
+  const centerLng = restaurants.reduce((sum, restaurant) => sum + restaurant.longitude, 0) / totalRestaurants;
+  const handleMapChange = ({ center }) => {
+    const updatedmarkers=markerPositions.map((marker) => { 
+      return {
+        ...marker,
+        latitude: marker.latitude,
+        longitude: marker.longitude,
+      }
 
-      // Add an event listener to the marker
-      marker.addListener('click', () => {
-        // Display information about the restaurant
-        console.log(restaurant);
-      });
+      
     });
+    console.log(updatedmarkers);
+    console.log(markerPositions);
+    setMarerPositions(updatedmarkers);
+  };
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: 'AIzaSyApNSMMooxbcl-W6a1KuJ7qZWMbW7U4kQU',
+  });
+  if(!isLoaded)
+  {
+    return "loading";
   }
-
-  render() {
-    return <div ref="map" style={{ height: '500px', width: '100%' }} />;
-  }
-}
+  return (
+    <div className="mapContainer">
+      <GoogleMap 
+      mapContainerClassName='mapContainer'
+        center={{ lat: centerLat, lng: centerLng }}
+        zoom={14}
+      >
+        {markerPositions.map((restaurant) => (
+          <MarkerF key={restaurant.id} position={{lat:restaurant.latitude,lng:restaurant.longitude}}/>
+        ))}
+      </GoogleMap>
+    </div>
+  );
+};
 
 export default Map;

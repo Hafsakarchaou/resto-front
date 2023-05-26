@@ -1,10 +1,13 @@
 import axios from "axios";
 
-const ZONE_BASE_REST_API_URL = 'http://localhost:8084/zones';
+const ZONE_BASE_REST_API_URL = 'http://localhost:8081/zones';
 
 class ZoneService{
     getAllZones(){
         const params = { expand: "ville" };
+        return axios.get(ZONE_BASE_REST_API_URL+"/all");
+    }
+    getAllZone(){
         return axios.get(ZONE_BASE_REST_API_URL+"/all");
     }
     createZone(zone){

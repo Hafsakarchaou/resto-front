@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERIE_BASE_REST_API_URL = 'http://localhost:8084/series';
+const SERIE_BASE_REST_API_URL = 'http://localhost:8081/series';
 
 class SerieService{
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import ZoneService from '../services/ZoneService'
+import VilleService from '../services/VilleService'
 import { Link } from 'react-router-dom'
 
 
@@ -16,7 +17,7 @@ const ListZoneComponent = () => {
     }, [])
 
     const getAllZones = () => {
-        ZoneService.getAllZones({ expand: "ville" })
+        ZoneService.getAllZones()
             .then((response) => {
                 setZone(response.data)
                 console.log(response.data);
@@ -24,6 +25,7 @@ const ListZoneComponent = () => {
                 console.log(error);
             })
     }
+
     const deleteZone = async (zoneId) => {
 
         ZoneService.deleteZone(zoneId).then((response) => {

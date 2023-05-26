@@ -21,7 +21,7 @@ const AddSpecialiteComponent = () => {
 
         if (id) {
             SpecialiteService.updateSpecialite(id, specialite).then((response) => {
-                navigate('/specialites')
+                navigate('/admin/specialites')
             }).catch(error => {
                 console.log(error)
             })
@@ -29,7 +29,7 @@ const AddSpecialiteComponent = () => {
         } else {
             SpecialiteService.createSpecialites(specialite).then((response) => {
                 console.log(response.data)
-                navigate('/specialites')
+                navigate('/admin/specialites')
             }).catch(error => {
                 console.log(error)
             })
@@ -72,7 +72,7 @@ const AddSpecialiteComponent = () => {
                             <button className = "btn btn-success formbtn" onClick = {(e) => saveOrUpdateSpecialite(e)}  id="submit" type="submit">
                             {id ? 'Update Speciality' : 'Add Speciality'}
                             </button>
-                            <Link to="/specialites" className="btn btn-danger"> Cancel </Link>
+                       <Link to="/admin/specialites" className="btn btn-danger"> Cancel </Link>
                         </div>
                     </form>
                 </div>

@@ -5,6 +5,7 @@ import ZoneService from '../services/ZoneService';
 import SpecialiteService from '../services/SpecialiteService';
 import RestoService from '../services/RestoService';
 import { useState, useEffect } from 'react'
+import AddRestaurantComponent from './AddRestaurantComponent';
 
 const HomeComponent = () => {
     const [numCities, setNumCities] = useState(0);
@@ -148,7 +149,7 @@ const HomeComponent = () => {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-lg-6 mb-4">
-                                        <Link to="/ville/add-city" className='lnk'>
+                                        <Link to="/admin/ville/add-city" className='lnk'>
                                             <div className="card bg-primary text-white shadow">
                                                 <div className="card-body">
                                                     Add a city
@@ -158,7 +159,7 @@ const HomeComponent = () => {
                                         </Link>
                                     </div>
                                     <div className="col-lg-6 mb-4">
-                                        <Link to="/zones/add-zone" className='lnk'>
+                                        <Link to="/admin/zones/add-zone" className='lnk'>
                                             <div className="card bg-success text-white shadow">
                                                 <div className="card-body ">
                                                     Add a zone
@@ -168,7 +169,7 @@ const HomeComponent = () => {
                                         </Link>
                                     </div>
                                     <div className="col-lg-6 mb-4">
-                                        <Link to="specialites/add-specialite" className='lnk'>
+                                        <Link to="/admin/specialites/add-specialite" className='lnk'>
                                             <div className="card bg-info text-white shadow">
                                                 <div className="card-body" >
                                                     Add a speciality
@@ -178,7 +179,7 @@ const HomeComponent = () => {
                                         </Link>
                                     </div>
                                     <div className="col-lg-6 mb-4">
-                                        <Link to="series/add-serie" className='lnk'>
+                                        <Link to="/admin/series/add-serie" className='lnk'>
                                             <div className="card bg-warning text-white shadow">
                                                 <div className="card-body">
                                                     Add a serie
@@ -199,18 +200,7 @@ const HomeComponent = () => {
                                 <h6 class="m-0 font-weight-bold text-primary">Add a restaurant</h6>
                             </div>
                             <div class="card-body">
-                                <form class="user">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="Address" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Phone Number" />
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-user btn-block">Add Restaurant</a>
-                                </form>
+                                <AddRestaurantComponent/>
                             </div>
                         </div>
                     </div>
