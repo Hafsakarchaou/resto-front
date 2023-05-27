@@ -9,6 +9,12 @@ const HeaderComponent = ({ handleLogout }) => {
   return (
     <nav className="navbar navbar-expand-md fixed-top navbar-scroll shadow-0">
       <div className="container">
+        <div class="col-auto" className='ico'>
+        <i className="fa fa-coffee fa-lg text-gray-300"></i>
+          <i className="fa fa-hamburger fa-lg text-gray-3100"></i>
+          <i class="fas fa-utensils fa-lg text-gray-300"></i>
+          
+        </div>
         <a className="navbar-brand">
           <Link to="/admin/home" className="navLink link">
             Manage restaurants
@@ -65,15 +71,15 @@ const HeaderComponent = ({ handleLogout }) => {
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              
-              
-                
-                <button className="nav-link btn btn-link" onClick={handleLogoutClick}>
+
+
+
+              <button className="nav-link btn btn-link" onClick={handleLogoutClick}>
                 <Link to="/login" className="navLink link">
-                 Logout
+                  Logout
                 </Link>
               </button>
-              
+
             </li>
           </ul>
         </div>

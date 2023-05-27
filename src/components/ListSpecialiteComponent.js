@@ -73,7 +73,7 @@ const ListSpecialiteComponent = () => {
                                             <td>
                                                 
                                                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons" onClick={() => deleteSpecialite(specialite.id)}>&#xE5C9;</i></a>
-                                                <Link to={`/edit-specialite/${specialite.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
+                                                <Link to={`/admin/edit-specialite/${specialite.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
 
                                                
                                                 

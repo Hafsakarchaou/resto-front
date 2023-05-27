@@ -6,6 +6,12 @@ const UserHeaderComponent = () => {
   return (
     <nav className="navbar navbar1 navbar-expand-md fixed-top navbar-scroll shadow-0">
       <div className="container">
+      <div class="col-auto" className='ico'>
+        <i className="fa fa-coffee fa-lg text-gray-300"></i>
+          <i className="fa fa-hamburger fa-lg text-gray-3100"></i>
+          <i class="fas fa-utensils fa-lg text-gray-300"></i>
+          
+        </div>
         <a className="navbar-brand">
           <Link to="/" className="navLink link">
             Search for Restaurants

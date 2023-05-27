@@ -61,7 +61,7 @@ const SerieListComponent = () => {
                                             <td>
                                                 
                                                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons" onClick={() => deleteSerie(serie.id)}>&#xE5C9;</i></a>
-                                                <Link to={`/edit-city/${serie.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
+                                                <Link to={`/admin/edit-city/${serie.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
 
                                                
                                                 

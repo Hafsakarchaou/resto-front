@@ -69,7 +69,7 @@ const ListZoneComponent = () => {
                                     <td>
 
                                         <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons" onClick={() => deleteZone(zone.id)}>&#xE5C9;</i></a>
-                                        <Link to={`/edit-zone/${zone.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
+                                        <Link to={`/admin/edit-zone/${zone.id}`} ><a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></Link>
 
 
 

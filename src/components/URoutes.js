@@ -6,6 +6,7 @@ import ResultsComponent from './ResultsComponent';
 import SearchRestos from './SearchRestos';
 import FooterComponent from './FooterComponent';
 import Map from './Map';
+import ItineraryComponent from './ItineraryComponent';
 import UserHeaderComponent from "./UserHeaderComponent"; 
 const URoutes = () => {
   return (
@@ -17,6 +18,7 @@ const URoutes = () => {
       <Route path="/results" element={<ResultsComponent />} />
       <Route path="/" element={<SearchRestos />} />
       <Route path="/Map" element={<Map />} />
+      <Route path="/itinerary" element={<ItineraryComponent />} />
     </Routes>
     <FooterComponent />
     </div>

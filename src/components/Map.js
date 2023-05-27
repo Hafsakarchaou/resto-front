@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript,MarkerF } from "@react-google-maps/api";
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import { Rating } from '@material-ui/lab';
+import MyImg from '../Assets/resto.jpg';
 
 const Map = ({ restaurants }) => {
   const matches = useMediaQuery('(min-width:600px)');
@@ -41,7 +42,10 @@ const Map = ({ restaurants }) => {
         zoom={14}
       >
         {markerPositions.map((restaurant) => (
-          <MarkerF key={restaurant.id} position={{lat:restaurant.latitude,lng:restaurant.longitude}}/>
+          <MarkerF /*icon={{
+            url: MyImg, // Assign the restaurant image as the marker icon
+            scaledSize: new window.google.maps.Size(40, 40), // Set the size of the marker icon
+          }}*/ key={restaurant.id} position={{lat:restaurant.latitude,lng:restaurant.longitude}} label={restaurant.nom}/>
         ))}
       </GoogleMap>
     </div>

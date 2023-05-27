@@ -123,8 +123,12 @@ const AddRestaurantComponent = () => {
           setLongitude(response.data.longitude);
           setLatitude(response.data.latitude);
           setSpecialites(response.data.specialites);
-          setZone(response.data.zone);
+          
+          
           setPhotos(response.data.photos);
+          setSelectedZone(response.data.zone);
+          setSelectedSerie(response.data.serie);
+          setSelectedSpecialties(response.data.specialites);
         })
         .catch((error) => {
           console.log(error);
@@ -278,7 +282,7 @@ const AddRestaurantComponent = () => {
                       {selectedZone ? selectedZone.nom : 'Select zone'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      {zone && zone.map((zoneItem) => (
+                      {zone && Array.isArray(zone) && zone.map((zoneItem) => (
                         <Dropdown.Item key={zoneItem.id} onClick={() => handleVilleSelect(zoneItem)}>
                           {zoneItem.nom}
                         </Dropdown.Item>
@@ -310,7 +314,7 @@ const AddRestaurantComponent = () => {
                     className="btn btn-primary btn-block"
                     onClick={saveOrUpdateRestaurant}
                   >
-                    Save
+                    {id ? 'Update Restaurant' : 'Add Restaurant'}
                   </button>
                   <Link to="/admin/restaurants" className="btn btn-danger">
                     Cancel
