@@ -4,7 +4,8 @@ import { Box, Typography, Card, CardMedia, CardContent, CardActions, Chip } from
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
-import Map from './Map';
+import Map2 from './Map2';
+import MyImg from '../Assets/restau1.jpg';
 
 const ItineraryComponent = () => {
   const location = useLocation();
@@ -30,36 +31,38 @@ const ItineraryComponent = () => {
         <div className="container my-5 py-5">
           <div className="row align-items-center g-5">
             <div className="col-lg-6 text-center text-lg-start reslts1">
-              <Card elevation={6} key={restaurant.id} style={{ marginBottom: '10px' }}>
-                <CardMedia style={{ height: 350 }} image={restaurant.image} title={restaurant.nom} />
-                <CardContent>
-                  <Typography gutterBottom variant="h5">
-                    {restaurant.nom}
-                  </Typography>
-                  <Box display="flex" justifyContent="space-between" my={2}>
-                    <Rating name="read-only" value={restaurant.rating} readOnly />
-                  </Box>
-                  <Box display="flex" justifyContent="space-between">
-                    <Typography component="legend">Price</Typography>
-                    <Typography gutterBottom variant="subtitle1">
-                      {restaurant.price}
-                    </Typography>
-                  </Box>
-                  <Box display="flex" justifyContent="space-between">
-                    <Typography component="legend">Ranking</Typography>
-                    <Typography gutterBottom variant="subtitle1">
-                      {restaurant.ranking}
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Chip icon={<LocationOnIcon />} label={restaurant.location} />
-                  <Chip icon={<PhoneIcon />} label={restaurant.phone} />
-                </CardActions>
-              </Card>
+            <Card
+                    elevation={6}
+                    key={restaurant.id}
+                    style={{ marginBottom: '10px', cursor: 'pointer' }}
+                  >
+                    <CardMedia style={{ height: 350 }} image={MyImg} title={restaurant.nom} />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5">
+                        {restaurant.nom}
+                      </Typography>
+                      <Box display="flex" justifyContent="space-between" my={2}>
+                        <Rating name="read-only" value={restaurant.ranking} readOnly />
+                      </Box>
+                      <Box display="flex" justifyContent="space-between">
+                        
+                        <Typography gutterBottom variant="subtitle1">
+                          {restaurant.nom}
+                          {restaurant.location}
+                        </Typography>
+                      </Box>
+                      <Box display="flex" justifyContent="space-between">
+                        <Typography component="legend">Ranking</Typography>
+                        <Typography component="legend">{restaurant.ran__}</Typography>
+                        <Typography gutterBottom variant="subtitle1">
+                          {restaurant.ranking}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
             </div>
             <div className="col-lg-6 text-center text-lg-end overflow-hidden reslts1">
-              <Map restaurant={restaurant} />
+              <Map2 restaurant={restaurant} />
             </div>
           </div>
         </div>

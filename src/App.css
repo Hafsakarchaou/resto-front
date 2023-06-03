@@ -53,9 +53,9 @@
 .drop1 {
 
  
-  background-color: #d1d8fa!important;
+  background-color: #ebecf3!important;
   color: #2e2c2c !important;
-  border-color: #d1d8fa!important;
+  border-color: #ebecf3!important;
 
 }
 
@@ -69,9 +69,9 @@
   margin-top: 330px;
   width: 200px;
   margin-left: 80px;
-  background-color: #d1d8fa!important;
+  background-color: #ebecf3!important;
   color: #2e2c2c !important;
-  border-color: #d1d8fa!important;
+  border-color: #ebecf3!important;
 
 }
 
@@ -180,7 +180,7 @@ navbar-scrolled {
 }
 .navbar1 {
   
-  background-color: #d1d8fa;
+  background-color: #49bc7d;
 }
 .container1 {
   padding-top: 100px;
@@ -556,10 +556,11 @@ body {
 .nav-pills .nav-item .active {
   border-bottom: 2px solid var(--primary);
 }
+/* /*#d1d8fa* */
 .btn9{
-  background-color: #d1d8fa!important;
+  background-color: #ebecf3!important;
   color: #2e2c2c !important;
-  border-color: #d1d8fa!important;
+  border-color: #ebecf3!important;
 }
 .tit1{
   font-family: 'Raleway' !important;
